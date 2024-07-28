@@ -23,8 +23,10 @@ const LoginForm = () => {
       const res: any = await fetch(endpoint, options);
       const resMsg = await res.json();
 
-      if (res.status == 202) {
-        showToast(resMsg, "success");
+      if (res.status == 202 || res.status == 200) {
+        showToast("Successfull Login!", "success");
+        // showToast(resMsg, "success");
+        reset();
         reset();
       } else showToast(resMsg, "error");
 

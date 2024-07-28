@@ -24,7 +24,8 @@ const SignUp = () => {
       const resMsg = await res.json();
 
       if (res.status == 202) {
-        showToast(resMsg, "success");
+        showToast("Successfully Created User!", "success");
+        // showToast(resMsg, "success");
         reset();
       } else showToast(resMsg, "error");
 
@@ -51,7 +52,7 @@ const SignUp = () => {
               <input type='text' placeholder='ex: John Hudson' 
                 className='py-2 px-3 w-full 
                         text-black font-light outline-none'
-                {...register("fullname", {required: true})}
+                {...register("fullName", {required: true})}
               />
 
               <input type='email' placeholder='ex: johnss12@gmail.com' 
